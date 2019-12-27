@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>{{title}}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
     <style>
       /* Made with love by Mutiullah Samim*/
@@ -119,14 +120,13 @@
         <!--<% if (message.length > 0) { %>
           <div class="alert alert-danger"><%- message %></div>
         <% } %>-->
-        <form action="login" method="POST">
+        <form action="resetpass" method="POST">
           <center>
-            <div class="card-header"><h3>Please login to continue </h3></div>
+            <div class="card-header"><h3>Reset password </h3></div>
             <div class="d-flex justify-content-center h-100">
               <div class="card">
                 <div class="card-header">
-                  <br><br>
-                  <h3>Sign In</h3>
+                  <h3>enter username and date of birth to reset your password</h3>
                   <div class="d-flex justify-content-end social_icon">
                     <span><i class="fab fa-facebook-square"></i></span>
                     <span><i class="fab fa-google-plus-square"></i></span>
@@ -144,15 +144,29 @@
                     </div>
                     <div class="input-group form-group">
                       <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-key">password</i></span>
+                        <span class="input-group-text"><i class="fas fa-key">DOB</i></span>
                       </div>
-                      <input type="password" class="form-control" placeholder="password" name="pass">
+                      <div class='input-group date' id='date'>
+                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" required/>
+                      </div>
+                      <script>
+                        $(document).ready(function(){
+                          var date_input=$('input[name="date"]'); //our date input has the name "date"
+                          var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+                          var options={
+                            format: 'mm/dd/yyyy',
+                            container: container,
+                            todayHighlight: true,
+                            endDate: "today",
+                            autoclose: true,
+                            orientation: "bottom auto",
+                          };
+                          date_input.datepicker(options);
+                        })
+                    </script>
                     </div>
-                    <!--<div class="row align-items-center remember">
-                      <input type="checkbox">Remember Me
-                    </div>-->
                     <div class="form-group">
-                      <input type="submit" value="Login" class="btn float-right login_btn">
+                      <input type="submit" value="Reset" class="btn float-right login_btn">
                     </div>
                   </form>
                 </div>
@@ -161,7 +175,7 @@
                     Don't have an account?<a href="register.html">Sign Up</a>
                   </div>
                   <div class="d-flex justify-content-center">
-                    <a href="resetpass.html">Forgot your password?</a>
+                    <a href="loginpage.html">Login with another credentials </a>
                   </div>
                 </div>
               </div>

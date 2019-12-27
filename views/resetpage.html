@@ -116,57 +116,24 @@
         </div>
       </nav>
       <div class="container">
-        <!--<% if (message.length > 0) { %>
-          <div class="alert alert-danger"><%- message %></div>
-        <% } %>-->
-        <form action="login" method="POST">
-          <center>
-            <div class="card-header"><h3>Please login to continue </h3></div>
-            <div class="d-flex justify-content-center h-100">
-              <div class="card">
-                <div class="card-header">
-                  <br><br>
-                  <h3>Sign In</h3>
-                  <div class="d-flex justify-content-end social_icon">
-                    <span><i class="fab fa-facebook-square"></i></span>
-                    <span><i class="fab fa-google-plus-square"></i></span>
-                    <span><i class="fab fa-twitter-square"></i></span>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <form>
-                    <div class="input-group form-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-user">username</i></span>
-                      </div>
-                      <input type="text" class="form-control" placeholder="username" name="lastname">
-                      
-                    </div>
-                    <div class="input-group form-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-key">password</i></span>
-                      </div>
-                      <input type="password" class="form-control" placeholder="password" name="pass">
-                    </div>
-                    <!--<div class="row align-items-center remember">
-                      <input type="checkbox">Remember Me
-                    </div>-->
+        <form action="newpass" method="POST">
+            <form>
+                <br><br>
+            <center>
+                <h4 style="color: white;">username       
+                    <input type="text" name="name" id="name" value="{{title}}" style="align-items: center; color: black;"></h4>
+                <h4 style="color: white;">New Password
+                    <input type="password" name="pass" id="pass" style="color: black;"></h4>
+                <h4 style="color: white;">Confirm Password
+                    <input type="password" name="cpass" id="cpass" style="color: black;"></h4>
                     <div class="form-group">
-                      <input type="submit" value="Login" class="btn float-right login_btn">
-                    </div>
-                  </form>
-                </div>
-                <div class="card-footer">
-                  <div class="d-flex justify-content-center links">
-                    Don't have an account?<a href="register.html">Sign Up</a>
-                  </div>
-                  <div class="d-flex justify-content-center">
-                    <a href="resetpass.html">Forgot your password?</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </center>
+                        <input type="submit" value="Login" class="btn float-right login_btn">
+                      </div>
+             <br><br> 
+            <a href="loginpage.html" ><h4 style="color: white;">Login As another user</h4></a>
+            </center>
+                
+            </form>
         </form>
       </div>
 </body>
