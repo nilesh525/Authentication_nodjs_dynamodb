@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>userhome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+
+    <style>
+      /* Made with love by Mutiullah Samim*/
+      @import url('https://fonts.googleapis.com/css?family=Numans');
+
+      html,body{
+      background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
+      font-family: 'Numans', sans-serif;
+      }
+
+      .container{
+      height: 100%;
+      align-content: center;
+      widows: 40%;
+      margin-top: 40px;
+      }
+      table, th, td {
+        border: 1px solid white;
+        border-collapse: collapse;
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+  <div style="max-height:50px;">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">NodeAuthentication</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active active-page"><a href="/">Home</a></li>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div> 
+      <div class="container">
+        <br><br>
+        <center>
+         <h3 style="color: white;">Welcome {{title.firstname}} to your home page .</h3><br><br>
+         <table style="width: 100%;" >
+          <tr style="height: 50px;">
+            <th><h4 style="color: white;">Firstname</h4>></th>
+            <th><h4 style="color: white;">username</h4></th>
+            <th><h4 style="color: white;">Gender</h4></th>
+            <th><h4 style="color: white;">DOB</h4></th>
+            <th><h4 style="color: white;">Address</h4></th>
+            <th><h4 style="color: white;">City</h4></th>
+            <th><h4 style="color: white;">Country<Country/h4></th>
+            <th><h4 style="color: white;">Department</h4></th>
+            <th><h4 style="color: white;">Description</h4></th>
+            <th><h4 style="color: white;">password</h4></th>
+          </tr>
+          <tr style="height: 50px;">
+            <td><h4 style="color: white;">{{title.firstname.S}}</h4></td>
+            <td><h4 style="color: white;">{{title.lastname.S}}</h4></td>
+            <td><h4 style="color: white;">{{title.gender.S}}</h4></td>
+            <td><h4 style="color: white;">{{title.date.S}}</h4></td>
+            <td><h4 style="color: white;">{{title.address.S}}</h4></td>
+            <td><h4 style="color: white;">{{title.city/S}}</h4></td>
+            <td><h4 style="color: white;">{{title.country.S}}</h4></td>
+            <td><h4 style="color: white;">{{title.dept.S}}</h4></td>
+            <td><h4 style="color: white;">{{title.desc.S}}</h4></td>
+            <td><h4 style="color: white;">{{title.pass.S}}</h4></td>
+          </tr> 
+        </table><br><br><br><br>
+        <a href="loginpage.html" ><h4 style="color: white;">Login As another user</h4></a>
+        </center>
+</body>
+</html>

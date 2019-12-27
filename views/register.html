@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Numans');
+
+      html,body{
+      background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 80%;
+      font-family: 'Numans', sans-serif;
+      }
+
+      .container{
+      align-content: center;
+      width: 40%;
+      height:100%;
+      }
+
+      .card-header h4{
+      color: white;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">NodeAuthentication</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="register.html" class="active-page"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="loginpage.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container">
+        <article class="card-body">
+          <form action="register" method="POST">
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="card-header"><h4>Full name </h4></label>   
+                  <input type="text" class="form-control" placeholder="" name="firstname" required>
+              </div> <!-- form-group end.// -->
+              <div class="col form-group">
+                <label class="card-header"><h4>username</h4></label>
+                  <input type="text" class="form-control" placeholder=" " name="lastname" required>
+              </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+            <div class="form-group">
+              <label class="card-header" style="color: white;margin-left: 50px;">Gender</label>
+              <label class="form-check form-check-inline " style="margin-left: 20px;">
+                <input class="form-check-input" type="radio" name="gender" value="male" required>
+                <span class="form-check-label" style="color: white;">Male</span>
+              </label>
+              <label class="form-check form-check-inline" style="margin-left: 20px;">
+                <input class="form-check-input" type="radio" name="gender" value="female" required>
+                <span class="form-check-label" style="color: white;" >Female</span>
+              </label>
+            </div> <!-- form-group end.// -->
+            <div class="form-row">
+              <div class="form-group col-md-4" style="text-align: center;margin-top: 5px">
+                <label class="card-header" style="color: white;">Date of Birth</label>
+              </div>
+              <div class="form-group col-md-7">
+                <div class="form-group">
+                  <div class='input-group date' id='date'>
+                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" required/>
+                     </div>
+                  <script>
+                    $(document).ready(function(){
+                      var date_input=$('input[name="date"]'); //our date input has the name "date"
+                      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+                      var options={
+                        format: 'mm/dd/yyyy',
+                        container: container,
+                        todayHighlight: true,
+                        endDate: "today",
+                        autoclose: true,
+                      };
+                      date_input.datepicker(options);
+                    })
+                </script>
+                </div>
+              </div>
+            </div>
+           <div class="form-group">
+              <label class="card-header"><h4>Address</h4></label>
+              <input type="text" class="form-control" placeholder="" name="address" required>
+              </div> <!-- form-group end.// -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="card-header"><h4>City</h4></label>
+                <input type="text" class="form-control" name="city" required>
+              </div> <!-- form-group end.// -->
+              <div class="form-group col-md-6">
+                <label class="card-header"><h4>Country</h4></label>
+                <select id="country" class="form-control" name="country" required>
+                  <option> Choose...</option>
+                    <option>Uzbekistan</option>
+                    <option>Russia</option>
+                    <option>United States</option>
+                    <option selected="">India</option selected="">
+                    <option>Afganistan</option>
+                </select>
+              </div> <!-- form-group end.// -->
+            </div> <!-- form-row.// -->
+            <!--department and details-->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="card-header"><h4>Department</h4></label>
+                <select id="dept" class="form-control" name="dept" required onclick="getItem()">
+                  <option selected=""> Choose...</option>
+                    <option value="HR">HR</option>
+                    <option value="IT">IT</option>
+                    <option value="Admin">Admin</option>
+                </select>
+              </div> <!-- form-group end.// -->
+              <div class="form-group col-md-6">
+                <label class="card-header"><h4>Description</h4></label>
+                <select id="desc" class="form-control" name="desc" required>
+                </select>
+              </div> <!-- form-group end.// -->
+            </div> <!-- form-row.// -->
+              <script>
+                function getItem() {
+                var list1 = document.getElementById('dept');
+                var list2 = document.getElementById("desc");
+                var list1SelectedValue = list1.options[list1.selectedIndex].value;
+                
+                if (list1SelectedValue=='HR')
+                {
+                    
+                    list2.options.length=0;
+                    list2.options[0] = new Option('--Select--', '');
+                    list2.options[1] = new Option('Recruitment', 'Recruitment');
+                    list2.options[2] = new Option('employee partner', 'employee partner');
+                    list2.options[3] = new Option('project partner', 'project partner');
+                    
+                }
+                else if (list1SelectedValue=='IT')
+                {
+                    
+                    list2.options.length=0;
+                    list2.options[0] = new Option('--Select--', '');
+                    list2.options[1] = new Option('IT option1', 'IT option1');
+                    list2.options[2] = new Option('IT option2', 'IT option2');
+                    list2.options[3] = new Option('IT option3', 'IT option3');
+                    list2.options[4] = new Option('IT option4', 'IT option4');
+                    list2.options[5] = new Option('IT option5', 'IT option5');
+                    
+                }  
+                else if (list1SelectedValue=='Admin')
+                {
+                    
+                    list2.options.length=0;
+                    list2.options[0] = new Option('--Select--', '');
+                    list2.options[1] = new Option('Admin option1', 'Admin option1');
+                    list2.options[2] = new Option('Admin option2', 'Admin option2');
+                    list2.options[3] = new Option('Admin option3', 'Admin option3');
+                    list2.options[4] = new Option('Admin option4', 'Admin option4');
+                    list2.options[5] = new Option('Admin option5', 'Admin option5');
+                    
+                }     
+              }
+              </script> 
+            <div class="form-group">
+              <label class="card-header"><h4>Password</h4></label>
+                <input class="form-control" type="password" name="pass" required>
+            </div> <!-- form-group end.// --> 
+            <div class="form-group">
+              <label class="card-header"><h4>Confirm password</h4></label>
+                <input class="form-control" type="password" name="cpass" required>
+            </div> <!-- form-group end.// -->  
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block"> Register  </button>
+              </div> <!-- form-group// -->      
+              <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>                                          
+          </form>
+          </article> <!-- card-body end .// -->
+      </div>
+</body>
+</html>
